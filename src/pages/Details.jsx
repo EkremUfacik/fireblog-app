@@ -1,27 +1,24 @@
-import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions, Divider } from "@mui/material";
+import { Button, CardActions, Divider } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CommentIcon from "@mui/icons-material/Comment";
-import { Navigate, useNavigate, useParams } from "react-router";
-import { delBlog, getBlog, useGetBlog } from "../helpers/firebaseFunctions";
+import { useNavigate, useParams } from "react-router";
+import { delBlog, useGetBlog } from "../helpers/firebaseFunctions";
 import { Box } from "@mui/system";
 import { useAuthContext } from "../contexts/AuthProvider";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const Details = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { currentUser } = useAuthContext();
   const { blogDetail, getBlog, load } = useGetBlog();
-  // if (blogDetail) {
-  //   const { desc, email, img, title } = blogDetail;
-  // }
+
   useEffect(() => {
     getBlog(id);
-  }, []);
+  }, [id]);
 
   const handleDel = () => {
     delBlog(id);
@@ -43,7 +40,10 @@ const Details = () => {
       </Typography>
       {load ? (
         <Box sx={{ textAlign: "center" }}>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921" />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
+            alt="img"
+          />
         </Box>
       ) : (
         <div>
