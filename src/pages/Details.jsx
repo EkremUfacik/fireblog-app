@@ -18,6 +18,7 @@ const Details = () => {
 
   useEffect(() => {
     getBlog(id);
+    // eslint-disable-next-line
   }, [id]);
 
   const handleDel = () => {
