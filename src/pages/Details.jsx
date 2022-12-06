@@ -9,6 +9,7 @@ import { delBlog, useGetBlog } from "../helpers/firebaseFunctions";
 import { Box } from "@mui/system";
 import { useAuthContext } from "../contexts/AuthProvider";
 import { useEffect } from "react";
+import { fontStyle } from "../global/style";
 
 const Details = () => {
   const navigate = useNavigate();
@@ -35,6 +36,8 @@ const Details = () => {
           bgcolor: "#7d85a8af",
           textAlign: "center",
           color: " #140505",
+          fontStyle,
+          fontSize: "30px",
         }}
       >
         DETAILS
@@ -64,7 +67,7 @@ const Details = () => {
               sx={{ objectFit: "fill" }}
             />
             <CardContent>
-              <Typography gutterBottom variant="h3">
+              <Typography gutterBottom variant="h3" sx={{ fontStyle }}>
                 {blogDetail?.title}
               </Typography>
               <Typography variant="p" color="#717171">

@@ -2,6 +2,7 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router";
 import { updateBlog, useGetBlog } from "../helpers/firebaseFunctions";
+import { fontStyle } from "../global/style";
 
 const UpdateBlog = () => {
   const { id } = useParams();
@@ -42,7 +43,7 @@ const UpdateBlog = () => {
               alt="blogImg"
             />
           </Box>
-          <Typography variant="h5" pb={3}>
+          <Typography variant="h5" pb={3} sx={{ fontStyle }}>
             UPDATE BLOG
           </Typography>
           <Box

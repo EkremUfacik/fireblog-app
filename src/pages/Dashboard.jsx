@@ -2,6 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import BlogCard from "../components/BlogCard";
 import { useFetch } from "../helpers/firebaseFunctions";
+import { fontStyle } from "../global/style";
 
 const Dashboard = () => {
   const { isLoading, blogList } = useFetch();
@@ -9,16 +10,22 @@ const Dashboard = () => {
   return (
     <>
       <Typography
-        variant="h5"
+        variant="h4"
         py={2}
-        sx={{ bgcolor: "#7d85a8af", textAlign: "center", color: "#140505" }}
+        sx={{
+          bgcolor: "#7d85a8af",
+          textAlign: "center",
+          color: "#140505",
+          fontStyle,
+          fontSize: "30px",
+        }}
       >
         DASHBOARD
       </Typography>
       <Grid
         container
         minHeight="calc(100vh - 128px)"
-        p={4}
+        p={6}
         sx={{
           alignItems: "center",
           justifyContent: "center",

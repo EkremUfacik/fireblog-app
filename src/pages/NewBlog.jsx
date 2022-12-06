@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useAuthContext } from "../contexts/AuthProvider";
 import { addBlog } from "../helpers/firebaseFunctions";
 import blogPhoto from "../asset/newblog.png";
+import { fontStyle } from "../global/style";
 
 const NewBlog = () => {
   const { currentUser } = useAuthContext();
@@ -49,7 +50,7 @@ const NewBlog = () => {
             alt=""
           />
         </Box>
-        <Typography variant="h5" pb={3}>
+        <Typography variant="h5" pb={3} sx={{ fontStyle }}>
           NEW BLOG
         </Typography>
         <Box
