@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActions, Divider } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CommentIcon from "@mui/icons-material/Comment";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useNavigate, useParams } from "react-router";
 import { delBlog, useGetBlog } from "../helpers/firebaseFunctions";
 import { Box } from "@mui/system";
@@ -54,7 +55,7 @@ const Details = () => {
           <Box
             sx={{
               maxWidth: 700,
-              width: "50%",
+              width: "60%",
               marginX: "auto",
               marginY: "2rem",
             }}
@@ -67,16 +68,25 @@ const Details = () => {
               sx={{ objectFit: "fill" }}
             />
             <CardContent>
-              <Typography gutterBottom variant="h3" sx={{ fontStyle }}>
+              <Typography
+                gutterBottom
+                variant="h3"
+                sx={{ fontStyle, fontSize: "30px" }}
+              >
                 {blogDetail?.title}
               </Typography>
               <Typography variant="p" color="#717171">
                 {blogDetail?.date}
               </Typography>
-              <Typography variant="body2" color="#3c3c3c">
+              <Typography variant="body1" color="#3c3c3c">
                 {blogDetail?.desc}
               </Typography>
-              <Typography variant="h6">{blogDetail?.email}</Typography>
+              <Box mt={1} sx={{ display: "flex", alignItems: "center" }}>
+                <AccountCircleIcon />
+                <Typography variant="body1" ml={1}>
+                  {blogDetail?.email}
+                </Typography>
+              </Box>
             </CardContent>
 
             <CardActions>

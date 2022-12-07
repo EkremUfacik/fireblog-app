@@ -53,11 +53,10 @@ export const useGetBlog = () => {
 
 export const delBlog = (id) => {
   remove(ref(db, "blogs/" + id));
+  toast.info("Blog Deleted !");
 };
 
 export const updateBlog = (blog, id) => {
-  console.log(blog);
-  console.log("ee");
   const updates = {};
   updates["blogs/" + id] = blog;
   return update(ref(db), updates);

@@ -16,7 +16,7 @@ export default function BlogCard({ blog }) {
     <Card
       elevation={10}
       sx={{ width: 320, height: "25.5rem" }}
-      onClick={() => navigate("/details/" + blog.id)}
+      onClick={() => navigate("/details/" + blog.id, { state: { blog } })}
     >
       <CardActionArea>
         <CardMedia

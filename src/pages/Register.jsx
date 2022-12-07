@@ -1,4 +1,4 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Avatar, Box, Button, Paper, TextField } from "@mui/material";
 import React, { useState } from "react";
 import useAuthCalls from "../hooks/useAuthCalls";
 import registerImg from "../asset/register.jpg";
@@ -32,29 +32,37 @@ const Register = () => {
 
   return (
     <Box
-      sx={{ bgcolor: "#6496c5", minHeight: "calc(100vh - 128px)", py: "2rem" }}
+      sx={{
+        bgcolor: "#6496c5",
+        minHeight: { xs: "calc(100vh - 120px)", sm: "calc(100vh - 128px)" },
+        py: "2rem",
+      }}
     >
-      <Box
+      <Paper
+        elevation={10}
         component="form"
         sx={{
           display: "flex",
           flexDirection: "column",
-          width: { xs: "20rem", sm: "30rem" },
+          width: { xs: "18rem", sm: "30rem" },
           marginX: "auto",
           gap: "1rem",
           p: "2rem",
-          border: "1px solid black",
           backgroundColor: "#afdce9",
         }}
         onSubmit={handleSubmit}
       >
-        <Box py={1} sx={{ textAlign: "center" }}>
-          <img
-            src={registerImg}
-            alt=""
-            style={{ borderRadius: "50%", width: "16rem", height: "16rem" }}
-          />
-        </Box>
+        <Avatar
+          src={registerImg}
+          alt=""
+          sx={{
+            width: { xs: "12rem", sm: "14rem" },
+            height: { xs: "12rem", sm: "14rem" },
+            marginX: "auto",
+            mb: "2rem",
+          }}
+        />
+
         <TextField
           required
           type="text"
@@ -108,7 +116,7 @@ const Register = () => {
         >
           Continue with Google
         </Button>
-      </Box>
+      </Paper>
     </Box>
   );
 };

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router";
 import { updateBlog, useGetBlog } from "../helpers/firebaseFunctions";
 import { fontStyle } from "../global/style";
+import { toast } from "react-toastify";
 
 const UpdateBlog = () => {
   const { id } = useParams();
@@ -22,6 +23,7 @@ const UpdateBlog = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     updateBlog(blogDetail, id);
+    toast.success("Successfuly Updated!");
     navigate("/");
   };
 

@@ -1,4 +1,4 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Avatar, Box, Button, Paper, TextField } from "@mui/material";
 import React, { useState } from "react";
 import useAuthCalls from "../hooks/useAuthCalls";
 import loginImg from "../asset/login.jpg";
@@ -25,29 +25,37 @@ const Login = () => {
 
   return (
     <Box
-      sx={{ bgcolor: "#822e2e", minHeight: "calc(100vh - 128px)", py: "2rem" }}
+      sx={{
+        bgcolor: "#822e2e",
+        minHeight: { xs: "calc(100vh - 120px)", sm: "calc(100vh - 128px)" },
+        py: "2rem",
+      }}
     >
-      <Box
+      <Paper
+        elevation={10}
         component="form"
         sx={{
           display: "flex",
           flexDirection: "column",
-          width: { xs: "20rem", sm: "30rem" },
+          width: { xs: "18rem", sm: "30rem" },
           marginX: "auto",
           gap: "1rem",
           p: "2rem",
-          border: "1px solid black",
-          backgroundColor: "#d1c5c5",
+          backgroundColor: "#d1c5c5dc",
         }}
         onSubmit={handleSubmit}
       >
-        <Box py={1} sx={{ textAlign: "center" }}>
-          <img
-            src={loginImg}
-            alt=""
-            style={{ borderRadius: "50%", width: "16rem", height: "16rem" }}
-          />
-        </Box>
+        <Avatar
+          src={loginImg}
+          alt=""
+          sx={{
+            width: { xs: "10rem", sm: "14rem" },
+            height: { xs: "10rem", sm: "14rem" },
+            marginX: "auto",
+            mb: "2rem",
+          }}
+        />
+
         <TextField
           required
           color="warning"
@@ -85,7 +93,7 @@ const Login = () => {
         >
           Continue with Google
         </Button>
-      </Box>
+      </Paper>
     </Box>
   );
 };
