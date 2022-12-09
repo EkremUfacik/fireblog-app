@@ -45,3 +45,10 @@
 ├── package.json
 └── yarn.lock
 ```
+
+## Link
+- https://movie-app-eu.netlify.app/
+
+## Screenshot
+
+<img src="src/asset/movie-app.gif" alt="user" style="zoom: 200%;" />
