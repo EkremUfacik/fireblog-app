@@ -1,4 +1,14 @@
-008 - FireBlog App (folder)
+# Fireblog App
+
+## Build with
+
+- React
+- React Router
+- MUI 
+- Firebase
+- Context
+
+## Project Skeleton
 
 ├── public
 │     └── index.html
