@@ -9,7 +9,7 @@
 - Context
 
 ## Project Skeleton
-
+```
 ├── public
 │     └── index.html
 ├── src
@@ -44,3 +44,4 @@
 ├── .env
 ├── package.json
 └── yarn.lock
+```
