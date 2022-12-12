@@ -47,7 +47,7 @@
 ```
 
 ## Link
-- https://movie-app-eu.netlify.app/
+- https://fireblog-app-eu.netlify.app/
 
 ## Screenshot
 
